@@ -13,7 +13,7 @@ function Main()
 
     WITH OBJECT Echo()
         :MsgInfo("Ola Mundo",ProcName())
-    ENDWITH
+    END WITH
 
     NamedParameters({"cTitle"=>ProcName(),"cMsg"=>"Ola Mundo"})
     NamedParameters({"cMsg"=>"Ola Mundo","cTitle"=>ProcName()})
@@ -30,7 +30,7 @@ static Function NamedParameters(hParameters as hash)
     local cTitle:=HB_HGETDEF(hParameters,"cTitle",ProcName()) as character
     WITH OBJECT Echo()
         :MsgInfo(cMsg,cTitle)
-    ENDWITH
+    END WITH
 return(nil)
 
 static Function NamedParametersKey(cMsg as character,cTitle as character,...)
@@ -58,6 +58,6 @@ static Function NamedParametersKey(cMsg as character,cTitle as character,...)
 
     WITH OBJECT Echo()
         :MsgInfo(cMsg,cTitle)
-    ENDWITH
+    END WITH
 
 return(nil)
