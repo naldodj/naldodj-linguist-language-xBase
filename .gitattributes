@@ -1,7 +1,4 @@
-*.apl, *.apw linguist-language=xBase
-
-*.ch, *.th linguist-language=xBase
-
-*.prg, *.prx, *.prw linguist-language=xBase
-
+*.apl *.apw linguist-language=xBase
+*.ch *.th linguist-language=xBase
+*.prg *.prx *.prw linguist-language=xBase
 *.tlpp linguist-language=xBase
