@@ -1,0 +1,13 @@
+#include "totvs.ch"
+#include "parmtype.ch"
+
+namespace OlaMundo
+
+class Echo
+    static method MsgInfo(cMsg as character,cTitle as character) as variant
+end class
+
+static method MsgInfo(cMsg,cTitle) class Echo
+    paramtype 1 var cMsg as character
+    paramtype 2 var cMsg as character optional default ProcName()
+return(MsgInfo(cMsg,cTitle))

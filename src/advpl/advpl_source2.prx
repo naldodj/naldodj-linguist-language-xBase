@@ -1,0 +1,4 @@
+#include "totvs.ch"
+
+function u_xOlaMundo()
+return(MsgInfo("Ola Mundo!",ProcName()))

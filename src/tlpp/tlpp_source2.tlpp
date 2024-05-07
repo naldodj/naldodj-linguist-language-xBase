@@ -1,0 +1,6 @@
+#include "totvs.ch"
+
+using namespace OlaMundo
+
+function u_OlaMundoTlpp() as variant
+return(Echo():MsgInfo("Ola Mundo",ProcName()))
