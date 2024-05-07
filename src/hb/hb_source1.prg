@@ -11,7 +11,9 @@ return(MsgInfo(cMsg,cTitle))
 
 function Main()
 
-    Echo():MsgInfo("Ola Mundo",ProcName())
+    WITH OBJECT Echo()
+        :MsgInfo("Ola Mundo",ProcName())
+    ENDWITH
 
     NamedParameters({"cTitle"=>ProcName(),"cMsg"=>"Ola Mundo"})
     NamedParameters({"cMsg"=>"Ola Mundo","cTitle"=>ProcName()})
@@ -26,7 +28,10 @@ return(nil)
 static Function NamedParameters(hParameters as hash)
     local cMsg:=HB_HGETDEF(hParameters,"cMsg","") as character
     local cTitle:=HB_HGETDEF(hParameters,"cTitle",ProcName()) as character
-return(Echo():MsgInfo(cMsg,cTitle))
+    WITH OBJECT Echo()
+        :MsgInfo(cMsg,cTitle)
+    ENDWITH
+return(nil)
 
 static Function NamedParametersKey(cMsg as character,cTitle as character,...)
 
@@ -51,4 +56,8 @@ static Function NamedParametersKey(cMsg as character,cTitle as character,...)
     hb_default(@cMsg,"")
     hb_default(@cTitle,ProcName())
 
-return(Echo():MsgInfo(cMsg,cTitle))
+    WITH OBJECT Echo()
+        :MsgInfo(cMsg,cTitle)
+    ENDWITH
+
+return(nil)
