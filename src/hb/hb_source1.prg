@@ -9,4 +9,13 @@ method MsgInfo(cMsg as character,cTitle as character) class Echo
 return(MsgInfo(cMsg,cTitle))
 
 function Main()
-return(Echo():MsgInfo("Ola Mundo",ProcName()))
+
+    Echo():MsgInfo("Ola Mundo",ProcName())
+    NamedParameters({"cTitle"=>ProcName(),"cMsg"=>"Ola Mundo"})
+
+return(nil)
+
+static Function NamedParameters(hParameters as hash)
+    local cMsg:=HB_HGETDEF(hParameters,"cMsg","")
+    local cTitle:=HB_HGETDEF(hParameters,"cTitle",ProcName()) as character
+return(Echo():MsgInfo(cMsg,cTitle))
