@@ -9,3 +9,5 @@
 *.prw linguist-language=xBase
 
 *.tlpp linguist-language=xBase
+
+*.hb linguist-language=ini
